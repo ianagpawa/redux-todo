@@ -1,19 +1,35 @@
 
 const ADD_TODO = 'ADD_TODO';
+const TOGGLE_TODO = 'TOGGLE_TODO';
+const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 
-{
-    type: ADD_TODO,
-    text: 'Build this todo app with redux'
+
+export const VisibilityFilters = {
+    SHOW_ALL: "SHOW_ALL",
+    SHOW_COMPLETED: 'SHOW_COMPLETED',
+    SHOW_ACTIVE: 'SHOW_ACTIVE'
 }
 
 
-{
-    type: TOGGLE_TODO,
-    index: 5
+export function addTodo(text){
+    return{
+        type: ADD_TODO,
+        text
+    }
 }
 
 
-{
-    type: SET_VISIBILITY_FILTER,
-    filter: SHOW_COMPLETED
+export function toggleTodo(index){
+    return {
+        type: TOGGLE_TODO,
+        index
+    }
+}
+
+
+export function setVisibilityFilter(filter){
+    return {
+        type: SET_VISIBILITY_FILTER,
+        filter
+    }
 }
